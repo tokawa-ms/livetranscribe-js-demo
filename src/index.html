@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Azure Speech Service 話者分離デモ</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Azure Speech Service 話者分離デモ</h1>
+        
+        <div class="setup-panel">
+            <h2>設定</h2>
+            <div class="form-group">
+                <label for="region">リージョン：</label>
+                <input type="text" id="region" placeholder="例: japaneast" value="japaneast" />
+            </div>
+            
+            <div class="form-group">
+                <label for="key">サブスクリプションキー：</label>
+                <input type="password" id="key" placeholder="Azure Speech Serviceのキーを入力" />
+            </div>
+            
+            <div class="form-group">
+                <label for="language">認識言語：</label>
+                <select id="language">
+                    <option value="ja-JP" selected>日本語</option>
+                    <option value="en-US">英語</option>
+                    <option value="zh-CN">中国語</option>
+                    <option value="ko-KR">韓国語</option>
+                </select>
+            </div>
+            
+            <div class="button-group">
+                <button id="startButton" class="primary-button">認識開始</button>
+                <button id="stopButton" class="secondary-button" disabled>認識終了</button>
+            </div>
+        </div>
+        
+        <div class="status-panel">
+            <p id="status">ステータス: 待機中</p>
+        </div>
+        
+        <div class="transcript-container">
+            <h2>会話トランスクリプション</h2>
+            <div id="transcriptionResult" class="chat-container">
+                <!-- 認識結果がここに表示されます -->
+            </div>
+        </div>
+    </div>
+    
+    <!-- Azure Speech SDK の読み込み -->
+    <script src="https://aka.ms/csspeech/jsbrowserpackageraw"></script>
+    <script src="script.js"></script>
+</body>
+</html>
